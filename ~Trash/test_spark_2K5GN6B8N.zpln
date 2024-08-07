@@ -1,0 +1,84 @@
+{
+  "paragraphs": [
+    {
+      "text": "sc.version",
+      "user": "anonymous",
+      "dateUpdated": "2024-08-07 15:49:07.378",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mres1\u001b[0m: \u001b[1m\u001b[32mString\u001b[0m \u003d 3.5.1\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1723013347378_1899504659",
+      "id": "paragraph_1723009683783_1757567299",
+      "dateCreated": "2024-08-07 15:49:07.378",
+      "status": "READY"
+    },
+    {
+      "text": "",
+      "user": "anonymous",
+      "dateUpdated": "2024-08-07 15:49:07.379",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1723013347379_963333090",
+      "id": "paragraph_1723010888712_1163197534",
+      "dateCreated": "2024-08-07 15:49:07.379",
+      "status": "READY"
+    }
+  ],
+  "name": "test_spark",
+  "id": "2K5GN6B8N",
+  "defaultInterpreterGroup": "spark",
+  "version": "0.11.1",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {},
+  "config": {
+    "isZeppelinNotebookCronEnable": false
+  },
+  "info": {}
+}
