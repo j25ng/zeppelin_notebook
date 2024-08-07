@@ -72,7 +72,7 @@
       "status": "FINISHED"
     }
   ],
-  "name": "test_spark",
+  "name": "test_spark_my",
   "id": "2K51FER73",
   "defaultInterpreterGroup": "spark",
   "version": "0.11.1",
