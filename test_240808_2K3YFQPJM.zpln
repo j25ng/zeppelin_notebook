@@ -239,7 +239,7 @@
       "status": "READY"
     }
   ],
-  "name": "spark_test",
+  "name": "spark_test_240808",
   "id": "2K3YFQPJM",
   "defaultInterpreterGroup": "spark",
   "version": "0.11.1",
