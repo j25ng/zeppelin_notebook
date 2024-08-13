@@ -3,7 +3,7 @@
     {
       "text": "sc.version",
       "user": "anonymous",
-      "dateUpdated": "2024-08-08 09:36:37.532",
+      "dateUpdated": "2024-08-08 15:40:52.431",
       "progress": 0,
       "config": {
         "editorSetting": {
@@ -27,7 +27,7 @@
         "msg": [
           {
             "type": "TEXT",
-            "data": "\u001b[1m\u001b[34mres2\u001b[0m: \u001b[1m\u001b[32mString\u001b[0m \u003d 3.5.1\n"
+            "data": "\u001b[1m\u001b[34mres1\u001b[0m: \u001b[1m\u001b[32mString\u001b[0m \u003d 3.5.1\n"
           }
         ]
       },
@@ -37,14 +37,14 @@
       "jobName": "paragraph_1723077393083_1167122273",
       "id": "paragraph_1723077393083_1167122273",
       "dateCreated": "2024-08-08 09:36:33.083",
-      "dateStarted": "2024-08-08 09:36:37.533",
-      "dateFinished": "2024-08-08 09:36:37.762",
+      "dateStarted": "2024-08-08 15:40:52.433",
+      "dateFinished": "2024-08-08 15:40:52.738",
       "status": "FINISHED"
     },
     {
       "text": "%spark.pyspark\nspark.version",
       "user": "anonymous",
-      "dateUpdated": "2024-08-08 09:36:52.268",
+      "dateUpdated": "2024-08-08 15:40:52.835",
       "progress": 0,
       "config": {
         "editorSetting": {
@@ -78,14 +78,14 @@
       "jobName": "paragraph_1723077397533_287270278",
       "id": "paragraph_1723077397533_287270278",
       "dateCreated": "2024-08-08 09:36:37.533",
-      "dateStarted": "2024-08-08 09:36:52.269",
-      "dateFinished": "2024-08-08 09:36:52.282",
+      "dateStarted": "2024-08-08 15:40:52.840",
+      "dateFinished": "2024-08-08 15:40:52.857",
       "status": "FINISHED"
     },
     {
       "text": "%spark.pyspark\ndf1 \u003d spark.read.parquet(\"/home/j25ng/tmp/sparkpartition\")",
       "user": "anonymous",
-      "dateUpdated": "2024-08-08 09:37:08.178",
+      "dateUpdated": "2024-08-08 15:40:52.940",
       "progress": 0,
       "config": {
         "editorSetting": {
@@ -117,7 +117,7 @@
           "group": "spark",
           "values": [
             {
-              "jobUrl": "http://10.255.255.254:4040/jobs/job?id\u003d80"
+              "jobUrl": "http://10.255.255.254:4040/jobs/job?id\u003d0"
             }
           ],
           "interpreterSettingId": "spark"
@@ -127,14 +127,14 @@
       "jobName": "paragraph_1723077412268_1230048909",
       "id": "paragraph_1723077412268_1230048909",
       "dateCreated": "2024-08-08 09:36:52.269",
-      "dateStarted": "2024-08-08 09:37:08.179",
-      "dateFinished": "2024-08-08 09:37:08.315",
+      "dateStarted": "2024-08-08 15:40:52.942",
+      "dateFinished": "2024-08-08 15:40:54.261",
       "status": "FINISHED"
     },
     {
-      "text": "%spark.pyspark\ndf2\u003d df1[\u0027movieCd\u0027, \u0027multiMovieYn\u0027, \u0027repNationCd\u0027]",
+      "text": "%spark.pyspark\ndf2\u003d df1[\u0027movieCd\u0027, \u0027multiMovieYn\u0027, \u0027repNationCd\u0027]\ndf2.createOrReplaceTempView(\"movie_type\")",
       "user": "anonymous",
-      "dateUpdated": "2024-08-08 09:37:25.770",
+      "dateUpdated": "2024-08-08 15:40:54.345",
       "progress": 0,
       "config": {
         "editorSetting": {
@@ -163,14 +163,14 @@
       "jobName": "paragraph_1723077428178_667415524",
       "id": "paragraph_1723077428178_667415524",
       "dateCreated": "2024-08-08 09:37:08.178",
-      "dateStarted": "2024-08-08 09:37:25.773",
-      "dateFinished": "2024-08-08 09:37:25.796",
+      "dateStarted": "2024-08-08 15:40:54.347",
+      "dateFinished": "2024-08-08 15:40:54.762",
       "status": "FINISHED"
     },
     {
       "text": "%spark.pyspark\ndf2.printSchema()",
       "user": "anonymous",
-      "dateUpdated": "2024-08-08 09:37:31.850",
+      "dateUpdated": "2024-08-08 15:40:54.848",
       "progress": 0,
       "config": {
         "editorSetting": {
@@ -204,14 +204,14 @@
       "jobName": "paragraph_1723077445772_1863305042",
       "id": "paragraph_1723077445772_1863305042",
       "dateCreated": "2024-08-08 09:37:25.772",
-      "dateStarted": "2024-08-08 09:37:31.851",
-      "dateFinished": "2024-08-08 09:37:31.866",
+      "dateStarted": "2024-08-08 15:40:54.852",
+      "dateFinished": "2024-08-08 15:40:54.872",
       "status": "FINISHED"
     },
     {
-      "text": "%spark.pyspark",
+      "text": "%spark.pyspark\ndf3 \u003d spark.sql(\"SELECT movieCd, repNationCd FROM movie_type WHERE multiMovieYn IS NULL\")\ndf4 \u003d spark.sql(\"SELECT movieCd, multiMovieYn FROM movie_type WHERE repNationCd IS NULL\")\ndf3.createOrReplaceTempView(\"multi_null\")\ndf4.createOrReplaceTempView(\"nation_null\")",
       "user": "anonymous",
-      "dateUpdated": "2024-08-08 09:37:38.579",
+      "dateUpdated": "2024-08-08 15:40:54.951",
       "progress": 0,
       "config": {
         "editorSetting": {
@@ -230,16 +230,253 @@
         "params": {},
         "forms": {}
       },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
       "apps": [],
       "runtimeInfos": {},
       "progressUpdateIntervalMs": 500,
       "jobName": "paragraph_1723077451851_2083610554",
       "id": "paragraph_1723077451851_2083610554",
       "dateCreated": "2024-08-08 09:37:31.851",
-      "status": "READY"
+      "dateStarted": "2024-08-08 15:40:54.954",
+      "dateFinished": "2024-08-08 15:40:55.022",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%spark.pyspark\n#df_2 \u003d spark.sql(\"SELECT m.movieCd, n.multiMovieYn, m.repNationCd FROM multi_null m FULL OUTER JOIN nation_null n ON m.movieCd \u003d n.movieCd\")\ndf_2 \u003d spark.sql(\"SELECT m.movieCd, n.multiMovieYn, m.repNationCd FROM multi_null m, nation_null n WHERE m.movieCd \u003d n.movieCd\")\ndf_2.createOrReplaceTempView(\"n_dup\")\ndf_2.show()\ndf_2.count()",
+      "user": "anonymous",
+      "dateUpdated": "2024-08-08 15:41:33.969",
+      "progress": 0,
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/python",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+--------+------------+-----------+\n| movieCd|multiMovieYn|repNationCd|\n+--------+------------+-----------+\n|20143642|           N|          F|\n|20149859|           N|          F|\n|20140226|           N|          F|\n|20143344|           Y|          F|\n|20149120|           N|          F|\n|20143602|           N|          F|\n|20143422|           N|          F|\n|20143045|           Y|          F|\n|20141621|           Y|          F|\n|20143343|           Y|          F|\n|20137048|           N|          K|\n|20141111|           Y|          K|\n|20149265|           N|          K|\n|20130574|           Y|          K|\n|20147176|           N|          K|\n|20141614|           Y|          K|\n|20143639|           N|          K|\n|20143081|           Y|          K|\n+--------+------------+-----------+\n\n18\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://10.255.255.254:4040/jobs/job?id\u003d10"
+            },
+            {
+              "jobUrl": "http://10.255.255.254:4040/jobs/job?id\u003d11"
+            },
+            {
+              "jobUrl": "http://10.255.255.254:4040/jobs/job?id\u003d12"
+            },
+            {
+              "jobUrl": "http://10.255.255.254:4040/jobs/job?id\u003d13"
+            },
+            {
+              "jobUrl": "http://10.255.255.254:4040/jobs/job?id\u003d14"
+            },
+            {
+              "jobUrl": "http://10.255.255.254:4040/jobs/job?id\u003d15"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1723077468728_656797055",
+      "id": "paragraph_1723077468728_656797055",
+      "dateCreated": "2024-08-08 09:37:48.728",
+      "dateStarted": "2024-08-08 15:41:33.971",
+      "dateFinished": "2024-08-08 15:41:34.694",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%sql\nSELECT m.movieCd, n.multiMovieYn, m.repNationCd FROM multi_null m FULL OUTER JOIN nation_null n ON m.movieCd \u003d n.movieCd",
+      "user": "anonymous",
+      "dateUpdated": "2024-08-08 15:40:57.168",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/sql",
+        "fontSize": 9.0,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300.0,
+              "optionOpen": true,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "movieCd": "string",
+                      "multiMovieYn": "string",
+                      "repNationCd": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                },
+                "pieChart": {},
+                "multiBarChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                },
+                "stackedAreaChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                },
+                "lineChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                }
+              },
+              "commonSetting": {},
+              "keys": [
+                {
+                  "name": "multiMovieYn",
+                  "index": 1.0,
+                  "aggr": "sum"
+                }
+              ],
+              "groups": [],
+              "values": [
+                {
+                  "name": "multiMovieYn",
+                  "index": 1.0,
+                  "aggr": "count"
+                }
+              ]
+            },
+            "helium": {}
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "movieCd\tmultiMovieYn\trepNationCd\n19900042\tnull\tK\nnull\tY\tnull\n20130574\tY\tK\n20137048\tN\tK\n20140226\tN\tF\n20141111\tY\tK\n20141114\tnull\tK\n20141614\tY\tK\n20141621\tY\tF\nnull\tY\tnull\n20143045\tY\tF\n20143081\tY\tK\n20143343\tY\tF\n20143344\tY\tF\n20143422\tN\tF\n20143602\tN\tF\n20143639\tN\tK\n20143642\tN\tF\n20147176\tN\tK\n20149120\tN\tF\n20149265\tN\tK\n20149859\tN\tF\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://10.255.255.254:4040/jobs/job?id\u003d4"
+            },
+            {
+              "jobUrl": "http://10.255.255.254:4040/jobs/job?id\u003d5"
+            },
+            {
+              "jobUrl": "http://10.255.255.254:4040/jobs/job?id\u003d6"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1723077687633_961865196",
+      "id": "paragraph_1723077687633_961865196",
+      "dateCreated": "2024-08-08 09:41:27.633",
+      "dateStarted": "2024-08-08 15:40:57.175",
+      "dateFinished": "2024-08-08 15:40:57.566",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%sql\n",
+      "user": "anonymous",
+      "dateUpdated": "2024-08-08 15:40:57.575",
+      "progress": 0,
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/sql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1723078310243_177603023",
+      "id": "paragraph_1723078310243_177603023",
+      "dateCreated": "2024-08-08 09:51:50.243",
+      "dateStarted": "2024-08-08 15:40:57.579",
+      "dateFinished": "2024-08-08 15:40:57.587",
+      "status": "FINISHED"
     }
   ],
-  "name": "spark_test_240808",
+  "name": "test_240808",
   "id": "2K3YFQPJM",
   "defaultInterpreterGroup": "spark",
   "version": "0.11.1",
@@ -249,5 +486,7 @@
   "config": {
     "isZeppelinNotebookCronEnable": false
   },
-  "info": {}
+  "info": {
+    "isRunning": false
+  }
 }

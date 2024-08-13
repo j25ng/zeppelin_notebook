@@ -1,0 +1,537 @@
+{
+  "paragraphs": [
+    {
+      "text": "%spark.pyspark\nLOAD_DT \u003d \"20150101\"\ndf1 \u003d spark.read.parquet(f\"/home/diginori/data/movie/repartition/load_dt\u003d{LOAD_DT}\")\ndf1.createOrReplaceTempView(\"one_day\")\n",
+      "user": "anonymous",
+      "dateUpdated": "2024-08-08 14:14:55.717",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/python",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1723094095717_236716660",
+      "id": "paragraph_1723089707190_2124501055",
+      "dateCreated": "2024-08-08 14:14:55.717",
+      "status": "READY"
+    },
+    {
+      "text": "%spark.pyspark\ndf1.columns",
+      "user": "anonymous",
+      "dateUpdated": "2024-08-08 14:14:55.717",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/python",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "[\u0027rnum\u0027, \u0027rank\u0027, \u0027rankInten\u0027, \u0027rankOldAndNew\u0027, \u0027movieCd\u0027, \u0027movieNm\u0027, \u0027openDt\u0027, \u0027salesAmt\u0027, \u0027salesShare\u0027, \u0027salesInten\u0027, \u0027salesChange\u0027, \u0027salesAcc\u0027, \u0027audiCnt\u0027, \u0027audiInten\u0027, \u0027audiChange\u0027, \u0027audiAcc\u0027, \u0027scrnCnt\u0027, \u0027showCnt\u0027, \u0027multiMovieYn\u0027, \u0027repNationCd\u0027]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1723094095717_594515135",
+      "id": "paragraph_1723091763158_1844038646",
+      "dateCreated": "2024-08-08 14:14:55.717",
+      "status": "READY"
+    },
+    {
+      "text": "%sql\nSELECT \n    movieCd, -- 영화의 대표코드\n    movieNm,\n    salesAmt, -- 매출액\n    audiCnt, -- 관객수\n    showCnt, --- 사영횟수\n    multiMovieYn, -- 다양성 영화/상업영화를 구분지어 조회할 수 있습니다. “Y” : 다양성 영화 “N”\n    repNationCd, -- 한국/외국 영화별로 조회할 수 있습니다. “K: : 한국영화 “F” : 외국영화\n    \u002720150101\u0027 AS load_dt\nFROM one_day",
+      "user": "anonymous",
+      "dateUpdated": "2024-08-08 14:14:55.718",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/sql",
+        "fontSize": 9.0,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300.0,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "movieCd": "string",
+                      "movieNm": "string",
+                      "salesAmt": "string",
+                      "audiCnt": "string",
+                      "showCnt": "string",
+                      "multiMovieYn": "string",
+                      "repNationCd": "string",
+                      "load_dt": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "movieCd\tmovieNm\tsalesAmt\taudiCnt\tshowCnt\tmultiMovieYn\trepNationCd\tload_dt\n20143642\t테이큰 3\t2644551100\t321653\t2947\tnull\tF\t20150104\n20149859\t마다가스카의 펭귄\t1687516200\t212779\t1846\tnull\tF\t20150104\n20140226\t호빗: 다섯 군대 전투\t609678800\t69988\t825\tnull\tF\t20150104\n20143344\t눈의 여왕 2: 트롤의 마법거울\t233190700\t30978\t415\tnull\tF\t20150104\n20149120\t인터스텔라\t192143100\t20636\t175\tnull\tF\t20150104\n20143602\t일곱난쟁이\t65447200\t9045\t134\tnull\tF\t20150104\n20143422\t숲속으로\t55772600\t7195\t154\tnull\tF\t20150104\n20143045\t내일을 위한 시간\t26098700\t3035\t89\tnull\tF\t20150104\n20141621\t마미\t13704500\t1533\t47\tnull\tF\t20150104\n20143343\t무드 인디고\t10800500\t1232\t44\tnull\tF\t20150104\n20137048\t국제시장\t6129982500\t751754\t4650\tnull\tK\t20150104\n20141111\t님아, 그 강을 건너지 마오\t1479015600\t178941\t1979\tnull\tK\t20150104\n20149265\t기술자들\t1299883700\t160371\t1886\tnull\tK\t20150104\n20130574\t개를 훔치는 완벽한 방법\t299346400\t37741\t650\tnull\tK\t20150104\n20147176\t상의원\t230484800\t28439\t491\tnull\tK\t20150104\n20141614\t더 테너 리리코 스핀토\t69620500\t8446\t367\tnull\tK\t20150104\n20143639\t뽀로로 극장판 눈요정 마을 대모험\t27846600\t5561\t83\tnull\tK\t20150104\n20143081\t그 사람 그 사랑 그 세상\t9467000\t1202\t14\tnull\tK\t20150104\n20141114\t쿼바디스\t4046900\t509\t19\tnull\tK\t20150104\n19900042\t장군의 아들\t416000\t208\t4\tnull\tK\t20150104\n20141111\t님아, 그 강을 건너지 마오\t1479015600\t178941\t1979\tY\tnull\t20150104\n20130574\t개를 훔치는 완벽한 방법\t299346400\t37741\t650\tY\tnull\t20150104\n20143344\t눈의 여왕 2: 트롤의 마법거울\t233190700\t30978\t415\tY\tnull\t20150104\n20141614\t더 테너 리리코 스핀토\t69620500\t8446\t367\tY\tnull\t20150104\n20143045\t내일을 위한 시간\t26098700\t3035\t89\tY\tnull\t20150104\n20141621\t마미\t13704500\t1533\t47\tY\tnull\t20150104\n20143343\t무드 인디고\t10800500\t1232\t44\tY\tnull\t20150104\n20143081\t그 사람 그 사랑 그 세상\t9467000\t1202\t14\tY\tnull\t20150104\n20142964\t클라우즈 오브 실스마리아\t9570000\t1123\t25\tY\tnull\t20150104\n20129490\t산\t1533000\t761\t4\tY\tnull\t20150104\n20137048\t국제시장\t6129982500\t751754\t4650\tN\tnull\t20150104\n20143642\t테이큰 3\t2644551100\t321653\t2947\tN\tnull\t20150104\n20149859\t마다가스카의 펭귄\t1687516200\t212779\t1846\tN\tnull\t20150104\n20149265\t기술자들\t1299883700\t160371\t1886\tN\tnull\t20150104\n20140226\t호빗: 다섯 군대 전투\t609678800\t69988\t825\tN\tnull\t20150104\n20147176\t상의원\t230484800\t28439\t491\tN\tnull\t20150104\n20149120\t인터스텔라\t192143100\t20636\t175\tN\tnull\t20150104\n20143602\t일곱난쟁이\t65447200\t9045\t134\tN\tnull\t20150104\n20143422\t숲속으로\t55772600\t7195\t154\tN\tnull\t20150104\n20143639\t뽀로로 극장판 눈요정 마을 대모험\t27846600\t5561\t83\tN\tnull\t20150104\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1723094095718_1592923575",
+      "id": "paragraph_1723091671766_1874704837",
+      "dateCreated": "2024-08-08 14:14:55.718",
+      "status": "READY"
+    },
+    {
+      "text": "%sql\nSELECT count(DISTINCT movieCd) FROM one_day",
+      "user": "anonymous",
+      "dateUpdated": "2024-08-08 14:14:55.718",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/sql",
+        "fontSize": 9.0,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300.0,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "count(DISTINCT movieCd)": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "count(DISTINCT movieCd)\n20\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1723094095718_275647863",
+      "id": "paragraph_1723092898130_1507213785",
+      "dateCreated": "2024-08-08 14:14:55.718",
+      "status": "READY"
+    },
+    {
+      "text": "%md\n### 바로 아래 코드는 참조용\n",
+      "user": "anonymous",
+      "dateUpdated": "2024-08-08 14:14:55.718",
+      "progress": 0,
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003e바로 아래 코드는 참조용\u003c/h3\u003e\n\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1723094095718_1834637241",
+      "id": "paragraph_1723093050674_1266055605",
+      "dateCreated": "2024-08-08 14:14:55.718",
+      "status": "READY"
+    },
+    {
+      "text": "%spark.pyspark\ndf2 \u003d spark.sql(f\"\"\"\nSELECT \n    movieCd, -- 영화의 대표코드\n    repNationCd -- 한국/외국 영화별로 조회할 수 있습니다. “K: : 한국영화 “F” : 외국영화\nFROM one_day\nWHERE multiMovieYn IS NULL\n\"\"\")\ndf2.createOrReplaceTempView(\"multi_null\")\n\ndf3 \u003d spark.sql(f\"\"\"\nSELECT \n    movieCd, -- 영화의 대표코드\n    multiMovieYn -- 다양성 영화/상업영화를 구분지어 조회할 수 있습니다. “Y” : 다양성 영화 “N”\nFROM one_day\nWHERE repNationCd IS NULL\n\"\"\")\ndf2.createOrReplaceTempView(\"multi_null\")\n\n\ndf_meta \u003d spark.sql(\"\"\"SELECT\n    COALESCE(m.movieCd, n.movieCd) AS movieCd,\n    multiMovieYn,\n    repNationCd\nFROM multi_null m FULL OUTER JOIN nation_null n\nON m.movieCd \u003d n.movieCd\"\"\")",
+      "user": "anonymous",
+      "dateUpdated": "2024-08-08 14:14:55.718",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/python",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1723094095718_1817816628",
+      "id": "paragraph_1723092659226_1558206341",
+      "dateCreated": "2024-08-08 14:14:55.718",
+      "status": "READY"
+    },
+    {
+      "text": "%spark.pyspark\ndf2 \u003d spark.sql(f\"\"\"\nSELECT \n    movieCd, -- 영화의 대표코드\n    movieNm,\n    salesAmt, -- 매출액\n    audiCnt, -- 관객수\n    showCnt, --- 사영횟수\n    -- multiMovieYn, -- 다양성 영화/상업영화를 구분지어 조회할 수 있습니다. “Y” : 다양성 영화 “N”\n    repNationCd, -- 한국/외국 영화별로 조회할 수 있습니다. “K: : 한국영화 “F” : 외국영화\n    \u0027{LOAD_DT}\u0027 AS load_dt\nFROM one_day\nWHERE multiMovieYn IS NULL\n\"\"\")\n\ndf2.createOrReplaceTempView(\"multi_null\")\n\n",
+      "user": "anonymous",
+      "dateUpdated": "2024-08-08 14:14:55.718",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/python",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1723094095718_413978710",
+      "id": "paragraph_1723091676068_1048075602",
+      "dateCreated": "2024-08-08 14:14:55.718",
+      "status": "READY"
+    },
+    {
+      "text": "%spark.pyspark\ndf3 \u003d spark.sql(f\"\"\"\nSELECT \n    movieCd, -- 영화의 대표코드\n    movieNm,\n    salesAmt, -- 매출액\n    audiCnt, -- 관객수\n    showCnt, --- 사영횟수\n    multiMovieYn, -- 다양성 영화/상업영화를 구분지어 조회할 수 있습니다. “Y” : 다양성 영화 “N”\n    -- repNationCd, -- 한국/외국 영화별로 조회할 수 있습니다. “K: : 한국영화 “F” : 외국영화\n    \u0027{LOAD_DT}\u0027 AS load_dt\nFROM one_day\nWHERE repNationCd IS NULL\n\"\"\")\n\ndf3.createOrReplaceTempView(\"nation_null\")",
+      "user": "anonymous",
+      "dateUpdated": "2024-08-08 14:14:55.719",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/python",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1723094095719_344528250",
+      "id": "paragraph_1723092107000_1892522428",
+      "dateCreated": "2024-08-08 14:14:55.719",
+      "status": "READY"
+    },
+    {
+      "text": "%spark.pyspark\ndf_j \u003d spark.sql(f\"\"\"\nSELECT\n    COALESCE(m.movieCd, n.movieCd) AS movieCd,\n    COALESCE(m.salesAmt, n.salesAmt), -- 매출액\n    COALESCE(m.audiCnt, n.audiCnt), -- 관객수\n    COALESCE(m.showCnt, n.showCnt), --- 사영횟수\n    multiMovieYn, -- 다양성 영화/상업영화를 구분지어 조회할 수 있습니다. “Y” : 다양성 영화 “N”\n    repNationCd, -- 한국/외국 영화별로 조회할 수 있습니다. “K: : 한국영화 “F” : 외국영화\n    \u0027{LOAD_DT}\u0027 AS load_dt\nFROM multi_null m FULL OUTER JOIN nation_null n\nON m.movieCd \u003d n.movieCd\"\"\")\n\ndf_j.createOrReplaceTempView(\"join_df\")",
+      "user": "anonymous",
+      "dateUpdated": "2024-08-08 14:14:55.719",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/python",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1723094095719_2029372120",
+      "id": "paragraph_1723092302784_1408985766",
+      "dateCreated": "2024-08-08 14:14:55.719",
+      "status": "READY"
+    },
+    {
+      "text": "%sql\nSELECT count(*) FROM join_df\n",
+      "user": "anonymous",
+      "dateUpdated": "2024-08-08 14:14:55.719",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/sql",
+        "fontSize": 9.0,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300.0,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "count(1)": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "count(1)\n20\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1723094095719_1977443336",
+      "id": "paragraph_1723092377109_876876670",
+      "dateCreated": "2024-08-08 14:14:55.719",
+      "status": "READY"
+    },
+    {
+      "text": "%spark.pyspark\ndf_j.write.mode(\u0027overwrite\u0027).partitionBy(\"load_dt\", \"multiMovieYn\", \"repNationCd\").parquet(\"/home/diginori/data/movie/hive\")",
+      "user": "anonymous",
+      "dateUpdated": "2024-08-08 14:14:55.719",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/python",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1723094095719_1815096552",
+      "id": "paragraph_1723092423637_182832184",
+      "dateCreated": "2024-08-08 14:14:55.719",
+      "status": "READY"
+    },
+    {
+      "text": "%spark.pyspark\n",
+      "user": "anonymous",
+      "dateUpdated": "2024-08-08 14:14:55.719",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/python",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1723094095719_2080570916",
+      "id": "paragraph_1723093383234_368748767",
+      "dateCreated": "2024-08-08 14:14:55.719",
+      "status": "READY"
+    }
+  ],
+  "name": "re",
+  "id": "2K6SS8YJP",
+  "defaultInterpreterGroup": "spark",
+  "version": "0.11.1",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {},
+  "config": {
+    "isZeppelinNotebookCronEnable": false
+  },
+  "info": {}
+}
